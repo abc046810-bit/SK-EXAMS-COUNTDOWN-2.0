@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="ogBg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#070914"/>
+      <stop offset="50%" stop-color="#0f1530"/>
+      <stop offset="100%" stop-color="#091326"/>
+    </linearGradient>
+    <linearGradient id="ogText" x1="120" y1="180" x2="900" y2="380" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#a5b4fc"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#ogBg)"/>
+  <circle cx="180" cy="140" r="240" fill="#6366f1" fill-opacity="0.14"/>
+  <circle cx="1020" cy="500" r="260" fill="#22d3ee" fill-opacity="0.12"/>
+  <rect x="72" y="72" width="1056" height="486" rx="32" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.12" stroke-width="2"/>
+  <text x="128" y="210" fill="#94a3b8" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="600" letter-spacing="4">PREMIUM 2.0 • ENGLISH &amp; हिंदी</text>
+  <text x="128" y="305" fill="url(#ogText)" font-family="system-ui, -apple-system, sans-serif" font-size="74" font-weight="800" letter-spacing="-1">SK EXAMS COUNTDOWN</text>
+  <text x="128" y="375" fill="#e2e8f0" font-family="system-ui, -apple-system, sans-serif" font-size="34" font-weight="500">Your Exam Journey, One Second Closer.</text>
+  <rect x="128" y="430" width="230" height="54" rx="27" fill="#6366f1" fill-opacity="0.22" stroke="#818cf8" stroke-opacity="0.5"/>
+  <text x="243" y="465" text-anchor="middle" fill="#e0e7ff" font-family="system-ui, sans-serif" font-size="22" font-weight="600">NEET • JEE • UPSC</text>
+  <rect x="378" y="430" width="260" height="54" rx="27" fill="#22d3ee" fill-opacity="0.14" stroke="#22d3ee" stroke-opacity="0.45"/>
+  <text x="508" y="465" text-anchor="middle" fill="#cffafe" font-family="system-ui, sans-serif" font-size="22" font-weight="600">Verified Official Dates</text>
+  <text x="1072" y="510" text-anchor="end" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="22">Made with ❤️ by @The_Sk08</text>
+</svg>

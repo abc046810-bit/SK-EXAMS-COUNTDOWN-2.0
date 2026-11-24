@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="128" y2="128" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0b1024"/>
+      <stop offset="100%" stop-color="#171b3a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="24" y1="20" x2="104" y2="108" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#818cf8"/>
+      <stop offset="55%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="28" fill="url(#bg)"/>
+  <rect x="6" y="6" width="116" height="116" rx="24" stroke="url(#accent)" stroke-width="3" stroke-opacity="0.45"/>
+  <path d="M40 28H88M40 100H88" stroke="url(#accent)" stroke-width="7" stroke-linecap="round"/>
+  <path d="M46 28V43C46 52 56 59 64 64C72 59 82 52 82 43V28" stroke="#e2e8f0" stroke-width="5.5" stroke-linejoin="round"/>
+  <path d="M46 100V85C46 76 56 69 64 64C72 69 82 76 82 85V100" stroke="#e2e8f0" stroke-width="5.5" stroke-linejoin="round"/>
+  <path d="M53 40H75L64 53L53 40Z" fill="#818cf8"/>
+  <path d="M51 94H77L64 78L51 94Z" fill="#22d3ee"/>
+  <circle cx="64" cy="64" r="3.5" fill="#f8fafc"/>
+</svg>

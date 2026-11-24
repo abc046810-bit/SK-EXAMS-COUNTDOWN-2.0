@@ -1,0 +1,20 @@
+{
+  "name": "SK EXAMS COUNTDOWN 2.0",
+  "short_name": "SK Countdown",
+  "description": "Your Exam Journey, One Second Closer. Live countdowns for NEET UG 2027, JEE Main & Advanced 2027, UPSC, SSC, Board Exams & custom timers.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#070914",
+  "theme_color": "#6366f1",
+  "orientation": "portrait-primary",
+  "categories": ["education", "productivity", "utilities"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
