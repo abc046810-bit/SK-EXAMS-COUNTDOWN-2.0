@@ -1,0 +1,27 @@
+{
+  "name": "sk-exams-countdown-2",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "SK EXAMS COUNTDOWN 2.0 — Premium bilingual exam countdown portal for Indian competitive, government, and board examinations. Dual-deployable on Cloudflare Pages and Render Free Web Service.",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "dev": "node scripts/build.mjs && node server/index.mjs",
+    "build": "node scripts/build.mjs",
+    "start": "node server/index.mjs",
+    "test": "node scripts/test-qa.mjs",
+    "validate:exams": "node scripts/validate-exams.mjs"
+  },
+  "keywords": [
+    "exam-countdown",
+    "neet-2027",
+    "jee-main-2027",
+    "upsc-2027",
+    "pwa",
+    "cloudflare-pages",
+    "render"
+  ],
+  "author": "@The_Sk08"
+}
