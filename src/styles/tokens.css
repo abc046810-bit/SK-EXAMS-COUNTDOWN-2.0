@@ -1,0 +1,122 @@
+/* ===== DESIGN TOKENS — SK EXAMS COUNTDOWN 2.0 ===== */
+:root {
+  --font-sans: 'Plus Jakarta Sans', 'Noto Sans Devanagari', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Dark-first Premium Palette */
+  --bg-base: #070914;
+  --bg-elevated: #0d1224;
+  --bg-surface: rgba(17, 24, 46, 0.72);
+  --bg-surface-strong: rgba(17, 24, 46, 0.92);
+  --bg-surface-hover: rgba(27, 38, 70, 0.85);
+  --bg-glass: rgba(255, 255, 255, 0.04);
+  --bg-glass-hover: rgba(255, 255, 255, 0.075);
+
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+
+  --accent: #6366f1;
+  --accent-light: #818cf8;
+  --accent-cyan: #22d3ee;
+  --accent-soft: rgba(99, 102, 241, 0.14);
+  --accent-border: rgba(129, 140, 248, 0.35);
+  --accent-glow: rgba(99, 102, 241, 0.28);
+
+  --border: rgba(148, 163, 184, 0.14);
+  --border-strong: rgba(148, 163, 184, 0.26);
+
+  --shadow-sm: 0 4px 16px rgba(2, 6, 23, 0.32);
+  --shadow-md: 0 12px 32px rgba(2, 6, 23, 0.45);
+  --shadow-lg: 0 24px 60px rgba(2, 6, 23, 0.62);
+
+  /* Semantic Status Colors */
+  --status-official-bg: rgba(16, 185, 129, 0.14);
+  --status-official-text: #34d399;
+  --status-official-border: rgba(52, 211, 153, 0.3);
+
+  --status-tentative-bg: rgba(245, 158, 11, 0.14);
+  --status-tentative-text: #fbbf24;
+  --status-tentative-border: rgba(251, 191, 36, 0.3);
+
+  --status-awaited-bg: rgba(56, 189, 248, 0.14);
+  --status-awaited-text: #38bdf8;
+  --status-awaited-border: rgba(56, 189, 248, 0.3);
+
+  --status-postponed-bg: rgba(244, 63, 94, 0.14);
+  --status-postponed-text: #fb7185;
+  --status-postponed-border: rgba(251, 113, 133, 0.32);
+
+  --status-expired-bg: rgba(148, 163, 184, 0.14);
+  --status-expired-text: #94a3b8;
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+  --radius-xl: 28px;
+  --radius-pill: 999px;
+
+  --header-h: 68px;
+  --mobile-nav-h: 66px;
+  --max-width: 1180px;
+  --transition: 0.24s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-theme="light"] {
+  --bg-base: #f4f6fb;
+  --bg-elevated: #ffffff;
+  --bg-surface: rgba(255, 255, 255, 0.88);
+  --bg-surface-strong: rgba(255, 255, 255, 0.97);
+  --bg-surface-hover: rgba(255, 255, 255, 1);
+  --bg-glass: rgba(15, 23, 42, 0.03);
+  --bg-glass-hover: rgba(15, 23, 42, 0.06);
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+
+  --accent: #4f46e5;
+  --accent-light: #6366f1;
+  --accent-cyan: #0891b2;
+  --accent-soft: rgba(79, 70, 229, 0.1);
+  --accent-border: rgba(79, 70, 229, 0.3);
+  --accent-glow: rgba(79, 70, 229, 0.18);
+
+  --border: rgba(15, 23, 42, 0.09);
+  --border-strong: rgba(15, 23, 42, 0.18);
+
+  --shadow-sm: 0 2px 10px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 10px 28px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 20px 50px rgba(15, 23, 42, 0.12);
+
+  --status-official-bg: rgba(16, 185, 129, 0.12);
+  --status-official-text: #047857;
+  --status-official-border: rgba(4, 120, 87, 0.25);
+
+  --status-tentative-bg: rgba(245, 158, 11, 0.14);
+  --status-tentative-text: #b45309;
+  --status-tentative-border: rgba(180, 83, 9, 0.25);
+
+  --status-awaited-bg: rgba(2, 132, 199, 0.12);
+  --status-awaited-text: #0369a1;
+  --status-awaited-border: rgba(3, 105, 161, 0.25);
+
+  --status-postponed-bg: rgba(225, 29, 72, 0.12);
+  --status-postponed-text: #be123c;
+  --status-postponed-border: rgba(190, 18, 60, 0.25);
+}
+
+[data-reduced-motion="true"] *,
+[data-reduced-motion="true"] *::before,
+[data-reduced-motion="true"] *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+  }
+}
