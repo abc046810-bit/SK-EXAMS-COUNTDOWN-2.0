@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#070914" />
+  <meta name="description" content="SK EXAMS COUNTDOWN 2.0 — Your Exam Journey, One Second Closer. Verified live countdowns for NEET UG 2027, JEE Main & Advanced 2027, UPSC, SSC, Board Exams & personal custom timers." />
+  <meta property="og:title" content="SK EXAMS COUNTDOWN 2.0" />
+  <meta property="og:description" content="Your Exam Journey, One Second Closer. Verified Indian exam schedules, live timers, study break mascots & music mode." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/og-image.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="SK Countdown" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <title>SK EXAMS COUNTDOWN 2.0 — Your Exam Journey, One Second Closer</title>
+  <!-- APP_STYLES -->
+</head>
+<body>
+  <!-- Splash Loading Screen -->
+  <div id="app-loader" class="app-loader" aria-hidden="true">
+    <div class="loader-card">
+      <div class="loader-logo-mark">
+        <svg viewBox="0 0 128 128" fill="none" width="44" height="44">
+          <path d="M40 28H88M40 100H88" stroke="#818cf8" stroke-width="7" stroke-linecap="round"/>
+          <path d="M46 28V43C46 52 56 59 64 64C72 59 82 52 82 43V28" stroke="#e2e8f0" stroke-width="5.5" stroke-linejoin="round"/>
+          <path d="M46 100V85C46 76 56 69 64 64C72 69 82 76 82 85V100" stroke="#e2e8f0" stroke-width="5.5" stroke-linejoin="round"/>
+          <path d="M53 40H75L64 53L53 40Z" fill="#818cf8"/>
+          <path d="M51 94H77L64 78L51 94Z" fill="#22d3ee"/>
+        </svg>
+      </div>
+      <div class="loader-title">SK EXAMS COUNTDOWN</div>
+      <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- Interactive Animated Background -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+  <div class="ambient-mesh" id="ambient-mesh" aria-hidden="true"></div>
+
+  <!-- Separate Music Mode Visual Canvas -->
+  <div id="music-mode-backdrop" class="music-mode-backdrop" aria-hidden="true">
+    <canvas id="music-canvas"></canvas>
+    <div class="music-aurora-layer"></div>
+  </div>
+
+  <!-- Exit Fullscreen Floating Button -->
+  <button id="exit-fs-btn" class="exit-fs-btn" aria-label="Exit Fullscreen" title="Exit Fullscreen">✕</button>
+
+  <!-- Main Application Shell -->
+  <div id="app-shell" class="app-shell">
+    <header class="top-header" id="top-header"></header>
+    <main id="main-content" class="main-content" tabindex="-1"></main>
+    <footer class="site-footer" id="site-footer"></footer>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile Navigation"></nav>
+  </div>
+
+  <!-- Instant Search Modal -->
+  <div id="search-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="search-dialog" id="search-dialog"></div>
+  </div>
+
+  <!-- Music Side Panel / Responsive Split Drawer -->
+  <aside id="music-drawer" class="music-drawer" aria-hidden="true" aria-label="Study Break Music Player"></aside>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <!-- APP_SCRIPT -->
+</body>
+</html>
