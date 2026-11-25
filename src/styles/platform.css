@@ -1,0 +1,447 @@
+/* ===== STUDENT PRODUCTIVITY PLATFORM STYLES ===== */
+
+/* KPI & Dashboard Grids */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+  gap: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.kpi-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.1rem 1.2rem;
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.kpi-label {
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.kpi-value {
+  font-family: var(--font-mono);
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.kpi-sub {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+.dash-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Tools Directory Grid */
+.tools-hub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 0.9rem;
+}
+
+.tool-tile {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.1rem;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  transition: var(--transition);
+}
+
+.tool-tile:hover {
+  background: var(--bg-surface-hover);
+  border-color: var(--accent-border);
+  transform: translateY(-2px);
+}
+
+.tool-tile-title {
+  font-weight: 700;
+  font-size: 0.96rem;
+  color: var(--text-primary);
+}
+
+.tool-tile-desc {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+/* Weekly Bar Chart */
+.mini-bar-chart {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+  align-items: end;
+  height: 120px;
+  padding-top: 1rem;
+}
+
+.mini-bar-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.mini-bar-fill {
+  width: 100%;
+  max-width: 30px;
+  border-radius: 7px 7px 3px 3px;
+  background: linear-gradient(180deg, var(--accent-cyan), var(--accent));
+  min-height: 6px;
+  transition: height 0.4s ease;
+}
+
+.mini-bar-lbl {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+/* Tabs */
+.tab-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.75rem;
+}
+
+.tab-btn {
+  padding: 0.5rem 0.95rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border);
+  background: var(--bg-glass);
+  color: var(--text-secondary);
+  font-size: 0.84rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.tab-btn.active {
+  background: var(--accent-soft);
+  border-color: var(--accent-border);
+  color: var(--accent-light);
+}
+
+/* Priority Badges */
+.prio-high { background: rgba(244, 63, 94, 0.14); color: #fb7185; border: 1px solid rgba(251, 113, 133, 0.3); }
+.prio-medium { background: rgba(245, 158, 11, 0.14); color: #fbbf24; border: 1px solid rgba(251, 191, 36, 0.3); }
+.prio-low { background: rgba(16, 185, 129, 0.14); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.3); }
+
+/* List Rows */
+.item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.list-row-card {
+  background: var(--bg-glass);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.list-row-card.completed {
+  opacity: 0.65;
+}
+
+.list-row-card.completed .row-title {
+  text-decoration: line-through;
+}
+
+.row-title {
+  font-weight: 700;
+  font-size: 0.94rem;
+}
+
+.row-meta {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  margin-top: 0.2rem;
+}
+
+/* Focus Timer Display */
+.focus-display-card {
+  text-align: center;
+  padding: 2.2rem 1.5rem;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(145deg, rgba(99, 102, 241, 0.14), rgba(15, 23, 42, 0.72));
+  border: 1px solid var(--accent-border);
+  margin-bottom: 1.5rem;
+}
+
+[data-theme="light"] .focus-display-card {
+  background: linear-gradient(145deg, rgba(79, 70, 229, 0.08), rgba(255, 255, 255, 0.96));
+}
+
+.focus-clock {
+  font-family: var(--font-mono);
+  font-size: clamp(3.1rem, 9vw, 5.2rem);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  background: linear-gradient(135deg, var(--text-primary) 15%, var(--accent-light) 70%, var(--accent-cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+  margin: 0.85rem 0;
+}
+
+/* Calculator Keypad */
+.calc-shell {
+  max-width: 440px;
+  margin: 0 auto;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  padding: 1.15rem;
+}
+
+.calc-screen {
+  background: var(--bg-base);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.9rem 1rem;
+  text-align: right;
+  margin-bottom: 0.85rem;
+  min-height: 78px;
+}
+
+.calc-expr {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  min-height: 1.2rem;
+  word-break: break-all;
+}
+
+.calc-result {
+  font-family: var(--font-mono);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  word-break: break-all;
+}
+
+.calc-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.45rem;
+}
+
+.calc-grid-sci {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.calc-key {
+  padding: 0.72rem 0.4rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--bg-glass);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.calc-key:hover {
+  background: var(--bg-glass-hover);
+  border-color: var(--accent-border);
+}
+
+.calc-key.op {
+  background: var(--accent-soft);
+  color: var(--accent-light);
+  border-color: var(--accent-border);
+}
+
+.calc-key.eq {
+  background: linear-gradient(135deg, var(--accent), #4f46e5);
+  color: #ffffff;
+}
+
+/* Monthly / Weekly Calendar Grid */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.35rem;
+}
+
+.cal-head-cell {
+  text-align: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  padding: 0.4rem 0;
+  text-transform: uppercase;
+}
+
+.cal-day-cell {
+  min-height: 68px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--bg-glass);
+  padding: 0.4rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: var(--transition);
+  text-align: left;
+}
+
+.cal-day-cell:hover {
+  border-color: var(--accent-border);
+  background: var(--bg-glass-hover);
+}
+
+.cal-day-cell.today {
+  border-color: var(--accent-cyan);
+  background: rgba(34, 211, 238, 0.1);
+}
+
+.cal-day-cell.selected {
+  border-color: var(--accent-light);
+  box-shadow: 0 0 0 2px var(--accent-soft);
+}
+
+.cal-day-cell.muted {
+  opacity: 0.35;
+}
+
+.cal-dots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  margin-top: 0.25rem;
+}
+
+.cal-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+/* Flashcard Box */
+.flashcard-stage {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.14), rgba(34, 211, 238, 0.08));
+  border: 1px solid var(--accent-border);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+/* Quiz Options */
+.quiz-option {
+  width: 100%;
+  text-align: left;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
+  background: var(--bg-glass);
+  color: var(--text-primary);
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.quiz-option:hover:not(:disabled) {
+  border-color: var(--accent-border);
+  background: var(--accent-soft);
+}
+
+.quiz-option.correct {
+  background: var(--status-official-bg);
+  border-color: var(--status-official-border);
+  color: var(--status-official-text);
+}
+
+.quiz-option.wrong {
+  background: var(--status-postponed-bg);
+  border-color: var(--status-postponed-border);
+  color: var(--status-postponed-text);
+}
+
+/* Achievement Badges */
+.badge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 0.85rem;
+}
+
+.achieve-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  opacity: 0.62;
+}
+
+.achieve-card.unlocked {
+  opacity: 1;
+  border-color: var(--accent-border);
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.14), var(--bg-surface));
+}
+
+/* Shareable Card Preview */
+.card-canvas-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+#share-card-canvas {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-strong);
+  box-shadow: var(--shadow-md);
+}
+
+/* Status Pill Steps for Telegram Report */
+.status-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.85rem;
+}
