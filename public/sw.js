@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'sk-exams-countdown-v2.0.1';
+const CACHE_VERSION = 'sk-exams-countdown-v2.1.0';
 const SHELL_ASSETS = [
   '/',
   '/index.html',
@@ -6,9 +6,10 @@ const SHELL_ASSETS = [
   '/favicon.svg',
   '/og-image.svg',
   '/presence-config.js',
-  '/assets/app.css?v=2.0.1',
-  '/assets/app.js?v=2.0.1',
-  '/data/exams.json'
+  '/assets/app.css?v=2.1.0',
+  '/assets/app.js?v=2.1.0',
+  '/data/exams.json',
+  '/data/quiz.json'
 ];
 
 self.addEventListener('install', (event) => {
