@@ -77,12 +77,12 @@ function sendFile(req, res, filePath, statusCode = 200) {
   setSecurityHeaders(res);
   res.setHeader('Content-Type', contentType);
 
-  if (filePath.endsWith('sw.js') || filePath.endsWith('presence-config.js')) {
+  if (filePath.endsWith('sw.js') || filePath.endsWith('presence-config.js') || filePath.endsWith('index.html')) {
     res.setHeader('Cache-Control', 'no-cache');
   } else if (filePath.endsWith('exams.json')) {
     res.setHeader('Cache-Control', 'public, max-age=300, stale-while-revalidate=600');
   } else if (filePath.includes(`${path.sep}assets${path.sep}`)) {
-    res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+    res.setHeader('Cache-Control', 'public, max-age=0, must-revalidate');
   } else {
     res.setHeader('Cache-Control', 'public, max-age=60');
   }
@@ -136,7 +136,7 @@ const server = http.createServer(async (req, res) => {
       res.end(JSON.stringify({
         status: 'ok',
         service: 'sk-exams-countdown-2',
-        version: '2.0.0',
+        version: '2.0.1',
         uptimeSeconds: Math.round(process.uptime()),
         timestamp: new Date().toISOString()
       }));
