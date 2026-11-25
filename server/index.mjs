@@ -79,7 +79,7 @@ function sendFile(req, res, filePath, statusCode = 200) {
 
   if (filePath.endsWith('sw.js') || filePath.endsWith('presence-config.js') || filePath.endsWith('index.html')) {
     res.setHeader('Cache-Control', 'no-cache');
-  } else if (filePath.endsWith('exams.json')) {
+  } else if (filePath.endsWith('exams.json') || filePath.endsWith('quiz.json')) {
     res.setHeader('Cache-Control', 'public, max-age=300, stale-while-revalidate=600');
   } else if (filePath.includes(`${path.sep}assets${path.sep}`)) {
     res.setHeader('Cache-Control', 'public, max-age=0, must-revalidate');
@@ -126,7 +126,6 @@ const server = http.createServer(async (req, res) => {
     const reqUrl = new URL(req.url || '/', `http://${req.headers.host || 'localhost'}`);
     const pathname = decodeURIComponent(reqUrl.pathname);
 
-    // Health check endpoint for Render Free Web Service
     if (pathname === '/health' || pathname === '/api/health') {
       setSecurityHeaders(res);
       res.writeHead(200, {
@@ -135,15 +134,14 @@ const server = http.createServer(async (req, res) => {
       });
       res.end(JSON.stringify({
         status: 'ok',
-        service: 'sk-exams-countdown-2',
-        version: '2.0.1',
+        service: 'sk-exams-countdown',
+        version: '2.1.0',
         uptimeSeconds: Math.round(process.uptime()),
         timestamp: new Date().toISOString()
       }));
       return;
     }
 
-    // Dynamic presence runtime configuration for Render
     if (pathname === '/presence-config.js' && (req.method === 'GET' || req.method === 'HEAD')) {
       setSecurityHeaders(res);
       res.writeHead(200, {
@@ -154,7 +152,6 @@ const server = http.createServer(async (req, res) => {
       return;
     }
 
-    // Lightweight single-instance presence fallback when PRESENCE_WORKER_URL is not set on Render
     if (pathname === '/api/presence/count' && req.method === 'GET') {
       pruneLocalVisitors();
       setSecurityHeaders(res);
@@ -195,7 +192,6 @@ const server = http.createServer(async (req, res) => {
       return;
     }
 
-    // Prevent directory traversal
     const safePath = path.normalize(pathname).replace(/^(\.\.[/\\])+/, '');
     const candidate = path.join(DIST_DIR, safePath === '/' ? 'index.html' : safePath);
 
@@ -210,14 +206,12 @@ const server = http.createServer(async (req, res) => {
       return;
     }
 
-    // If requesting a missing static asset (with file extension), return 404
     if (path.extname(pathname)) {
       res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
       res.end('Not Found');
       return;
     }
 
-    // SPA fallback for client-side routes
     sendFile(req, res, path.join(DIST_DIR, 'index.html'), 200);
   } catch (err) {
     console.error('Server error:', err);
@@ -227,7 +221,7 @@ const server = http.createServer(async (req, res) => {
 });
 
 server.listen(PORT, HOST, () => {
-  console.log(`🚀 SK EXAMS COUNTDOWN 2.0 running on http://${HOST}:${PORT} (serving dist/)`);
+  console.log(`🚀 SK EXAMS COUNTDOWN running on http://${HOST}:${PORT} (serving dist/)`);
 });
 
 function shutdown(signal) {
@@ -238,3 +232,4 @@ function shutdown(signal) {
 
 process.on('SIGTERM', () => shutdown('SIGTERM'));
 process.on('SIGINT', () => shutdown('SIGINT'));
+          
