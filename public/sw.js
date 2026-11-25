@@ -1,12 +1,13 @@
-const CACHE_VERSION = 'sk-exams-countdown-v2.0.0';
+const CACHE_VERSION = 'sk-exams-countdown-v2.0.1';
 const SHELL_ASSETS = [
   '/',
   '/index.html',
   '/manifest.json',
   '/favicon.svg',
   '/og-image.svg',
-  '/assets/app.css',
-  '/assets/app.js',
+  '/presence-config.js',
+  '/assets/app.css?v=2.0.1',
+  '/assets/app.js?v=2.0.1',
   '/data/exams.json'
 ];
 
@@ -36,19 +37,8 @@ self.addEventListener('fetch', (event) => {
   const url = new URL(request.url);
   if (url.origin !== self.location.origin) return;
 
-  // Network-first for exams.json so official date updates appear immediately when online
-  if (url.pathname.endsWith('/data/exams.json')) {
-    event.respondWith(
-      fetch(request)
-        .then((response) => {
-          if (response && response.ok) {
-            const clone = response.clone();
-            caches.open(CACHE_VERSION).then((cache) => cache.put(request, clone));
-          }
-          return response;
-        })
-        .catch(() => caches.match(request))
-    );
+  // Never cache presence API or runtime config
+  if (url.pathname.startsWith('/api/presence') || url.pathname === '/presence-config.js') {
     return;
   }
 
@@ -68,19 +58,16 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Stale-while-revalidate for static assets
+  // Network-first for all app assets & data so redeployments appear immediately, with offline fallback
   event.respondWith(
-    caches.match(request).then((cached) => {
-      const networkFetch = fetch(request)
-        .then((response) => {
-          if (response && response.ok) {
-            const clone = response.clone();
-            caches.open(CACHE_VERSION).then((cache) => cache.put(request, clone));
-          }
-          return response;
-        })
-        .catch(() => cached);
-      return cached || networkFetch;
-    })
+    fetch(request)
+      .then((response) => {
+        if (response && response.ok) {
+          const clone = response.clone();
+          caches.open(CACHE_VERSION).then((cache) => cache.put(request, clone));
+        }
+        return response;
+      })
+      .catch(() => caches.match(request))
   );
 });
