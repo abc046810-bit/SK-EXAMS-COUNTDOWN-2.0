@@ -6,7 +6,7 @@
 
 A fast, zero-dependency, bilingual (**English & हिंदी**) Indian exam countdown portal, student productivity suite, and floating music companion — built for **Mobile, Tablet, and Desktop**, and deployable on both **Render Free Web Service** and **Cloudflare Pages**.
 
-[Live Website](https://www.google.com/search?q=https://sk-exams-countdown-2-0.onrender.com/)
+[Live Website](https://sk-exams-countdown-2-0.onrender.com/)
 [](https://nodejs.org/)
 [](#architecture)
 [](#local-development--testing)
