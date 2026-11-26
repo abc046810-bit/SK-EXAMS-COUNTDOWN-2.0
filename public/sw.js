@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'sk-exams-countdown-v2.1.0';
+const CACHE_VERSION = 'sk-exams-countdown-v2.2.0';
 const SHELL_ASSETS = [
   '/',
   '/index.html',
@@ -6,8 +6,8 @@ const SHELL_ASSETS = [
   '/favicon.svg',
   '/og-image.svg',
   '/presence-config.js',
-  '/assets/app.css?v=2.1.0',
-  '/assets/app.js?v=2.1.0',
+  '/assets/app.css?v=2.2.0',
+  '/assets/app.js?v=2.2.0',
   '/data/exams.json',
   '/data/quiz.json'
 ];
@@ -38,8 +38,12 @@ self.addEventListener('fetch', (event) => {
   const url = new URL(request.url);
   if (url.origin !== self.location.origin) return;
 
-  // Never cache presence API or runtime config
-  if (url.pathname.startsWith('/api/presence') || url.pathname === '/presence-config.js') {
+  // Never cache presence API, music API, or runtime config
+  if (
+    url.pathname.startsWith('/api/presence') ||
+    url.pathname.startsWith('/api/music') ||
+    url.pathname === '/presence-config.js'
+  ) {
     return;
   }
 
